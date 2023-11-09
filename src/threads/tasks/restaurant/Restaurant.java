@@ -40,6 +40,9 @@ public class Restaurant {
 
         waiter.start();
         customer1.start();
+        customer2.start();
+        customer3.start();
+        customer4.start();
 
     }
 }

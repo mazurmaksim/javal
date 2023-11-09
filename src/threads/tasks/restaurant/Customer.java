@@ -16,9 +16,15 @@ public class Customer {
 
     public void placeOrder() {
         synchronized (lock) {
-            lock.notify();
-            System.out.println("[ Waiting for a Waiter... ]");
-            System.out.println("Customer - Place Order to table Number " + tableNumber + " " + selectedItems);
+            try {
+                Thread.sleep(900);
+                System.out.println("[ Waiting for a Waiter... ]");
+                System.out.println("Customer - Place Order to table Number " + tableNumber + " " + selectedItems);
+                lock.wait();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     }
 

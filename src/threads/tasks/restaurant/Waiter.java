@@ -13,7 +13,7 @@ public class Waiter {
         synchronized (lock) {
             while (true) {
                 try {
-                    lock.wait();
+                    lock.wait(600);
                     System.out.println(" { Waiter serving table }");
                     Thread.sleep(1000);
                     System.out.println("{Waiter served this customer...}");
