@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Restaurant {
-    private static final HashMap<Integer, Customer> tables = new HashMap<>();
 
     public static void main(String[] args) {
         Object sharedObject = new Object();
@@ -31,11 +30,6 @@ public class Restaurant {
         Customer cs2 = new Customer(sharedObject,2, List.of("Capuccino", "Pasta", "Fish"));
         Customer cs3 = new Customer(sharedObject,3, List.of("Proseko", "Fanta", "Cola"));
         Customer cs4 = new Customer(sharedObject,4, List.of("Picca", "Hamburger", "Soda"));
-
-        tables.put(1, cs1);
-        tables.put(2, cs2);
-        tables.put(3, cs3);
-        tables.put(4, cs4);
 
         Waiter wt = new Waiter(sharedObject);
         Thread customer1 = new Thread(cs1::placeOrder);
@@ -46,8 +40,6 @@ public class Restaurant {
 
         waiter.start();
         customer1.start();
-        customer2.start();
-        customer3.start();
-        customer4.start();
+
     }
 }

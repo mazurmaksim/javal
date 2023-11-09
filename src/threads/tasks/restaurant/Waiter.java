@@ -13,13 +13,14 @@ public class Waiter {
         synchronized (lock) {
             while (true) {
                 try {
-                    lock.wait(600);
-                    System.out.println("Waiter - Yes please");
+                    lock.wait();
+                    System.out.println(" { Waiter serving table }");
+                    Thread.sleep(1000);
+                    System.out.println("{Waiter served this customer...}");
+                    lock.notify();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                lock.notify();
-                System.out.println(" Waiter is free ");
             }
         }
     }

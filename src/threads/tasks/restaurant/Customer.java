@@ -10,23 +10,15 @@ public class Customer {
 
     public Customer(Object lock, Integer tableNumber, List<String> selectedItems) {
         this.lock = lock;
-        this.tableNumber= tableNumber;
+        this.tableNumber = tableNumber;
         this.selectedItems = selectedItems;
     }
 
     public void placeOrder() {
         synchronized (lock) {
-            while (true) {
-
-                try {
-                    System.out.println("Customer - Place Order to table Number " + tableNumber + " " + selectedItems);
-                    Thread.sleep(500);
-                    lock.notify();
-                    lock.wait();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+            lock.notify();
+            System.out.println("[ Waiting for a Waiter... ]");
+            System.out.println("Customer - Place Order to table Number " + tableNumber + " " + selectedItems);
         }
     }
 
