@@ -5,7 +5,7 @@ package threads;
 //        but there's no reason to prevent an update of c1 from being interleaved with an update of c2 — and
 //        doing so reduces concurrency by creating unnecessary blocking. Instead of using synchronized methods or
 //        otherwise using the lock associated with this, we create two objects solely to provide locks.
-public class MsLunch {
+public class ObjectLocking {
     private long c1 = 0;
     private long c2 = 0;
     private Object lock = new Object();
