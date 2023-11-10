@@ -5,7 +5,7 @@ import java.util.List;
 public class Customer {
 
     private final Object lock;
-    private Integer tableNumber;
+    private final Integer tableNumber;
     List<String> selectedItems;
 
     public Customer(Object lock, Integer tableNumber, List<String> selectedItems) {

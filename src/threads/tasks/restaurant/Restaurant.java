@@ -18,7 +18,6 @@ package threads.tasks.restaurant;
 //        Use the wait and notify mechanisms for synchronization between the waiter and the customers to ensure
 //        that they can correctly wait and place their orders.
 
-import java.util.HashMap;
 import java.util.List;
 
 public class Restaurant {

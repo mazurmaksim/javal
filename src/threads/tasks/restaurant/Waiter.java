@@ -11,7 +11,7 @@ public class Waiter {
 
     public void serveFood() {
         synchronized (lock) {
-            while (true) {
+            for (int i = 1; i <= 4 ; i++) {
                 try {
                     lock.wait(600);
                     System.out.println(" { Waiter serving table }");
