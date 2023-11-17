@@ -1,4 +1,4 @@
 package threads.tasks.restaurant;
 
-public class Waiter {
+public class Chef {
 }

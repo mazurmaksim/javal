@@ -1,4 +1,4 @@
-package threads;
+package threads.synchronize.lockLevels;
 //        Synchronized statements are also useful for improving concurrency with fine-grained synchronization. Suppose,
 //        for example, class MsLunch has two instance fields, c1 and c2, that are never used together.
 //        All updates of these fields must be synchronized,

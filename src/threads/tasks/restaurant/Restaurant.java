@@ -1,47 +1,36 @@
 package threads.tasks.restaurant;
 
-//Task: Restaurant with a Waiter
+//        You are developing an order management system for a restaurant. The restaurant consists of a kitchen where
+//        food is prepared and serving staff that takes orders from customers.
 //
-//        Imagine you have a restaurant with one waiter and several customers. The waiter can serve
-//        only one customer at a time.
-//        Customers need to wait until the waiter is available to place their food orders.
+//        Create a class called Order that contains information about the order:
+//        order number, a list of dishes, and status (completed or pending).
 //
-//        Your task is to create two classes: Waiter and Customer.
+//        Create a class called Dish that contains information about a dish:
+//        name, ingredients, and preparation time.
 //
-//        The Waiter class represents the waiter and has a method serveFood that should be called when the waiter
-//        is ready to take an order from a customer.
+//        Create a class called Chef to represent the kitchen of the restaurant.
+//        Each Chef should be implemented as a thread. Each Chef should take orders
+//        and prepare dishes according to their preparation time. After completing
+//        the preparation, each dish should be marked as ready.
 //
-//        The Customer class represents a restaurant customer and has a method placeOrder that is called
-//        when a customer wants to order food. The customer should wait if the waiter is busy, and when the waiter
-//        becomes available, they can place their order.
+//        Create a class called Waiter to represent the serving staff of the restaurant.
+//        The Waiter should be implemented as a thread. Waiters should take orders from
+//        customers and pass them to the kitchen. After the Chef completes the order,
+//        the Waiter should deliver it to the customer.
 //
-//        Use the wait and notify mechanisms for synchronization between the waiter and the customers to ensure
-//        that they can correctly wait and place their orders.
+//        Create a class called Restaurant that uses threads for the kitchen and serving
+//        staff. The Restaurant should take orders from customers and distribute them among
+//        the waiters. Waiters should pass the orders to the Chefs for preparation.
+//        When the Chef finishes preparing a dish, the Waiter should deliver the order to the customer.
 
-import java.util.List;
+import java.util.Arrays;
 
 public class Restaurant {
 
     public static void main(String[] args) {
-        Object sharedObject = new Object();
-
-        Customer cs1 = new Customer(sharedObject,1, List.of("Tea", "Coffee", "Stakes"));
-        Customer cs2 = new Customer(sharedObject,2, List.of("Capuccino", "Pasta", "Fish"));
-        Customer cs3 = new Customer(sharedObject,3, List.of("Proseko", "Fanta", "Cola"));
-        Customer cs4 = new Customer(sharedObject,4, List.of("Picca", "Hamburger", "Soda"));
-
-        Waiter wt = new Waiter(sharedObject);
-        Thread customer1 = new Thread(cs1::placeOrder);
-        Thread customer2 = new Thread(cs2::placeOrder);
-        Thread customer3 = new Thread(cs3::placeOrder);
-        Thread customer4 = new Thread(cs4::placeOrder);
-        Thread waiter = new Thread(wt::serveFood);
-
-        waiter.start();
-        customer1.start();
-        customer2.start();
-        customer3.start();
-        customer4.start();
-
+        Customer customer1 = new Customer(1, Arrays.asList(new ChickenCurry(), new SalmonSushi(), new MargaritaPica()));
+        Customer customer2 = new Customer(8, Arrays.asList(new ChickenCurry(), new MargaritaPica()));
+        Customer customer3 = new Customer(5, Arrays.asList(new ChickenCurry(), new MargaritaPica(), new MargaritaPica()));
     }
 }

@@ -3,36 +3,27 @@ package threads.tasks.restaurant;
 import java.util.List;
 
 public class Customer {
+    int tableNumber;
+    List<Item> items;
 
-    private final Object lock;
-    private final Integer tableNumber;
-    List<String> selectedItems;
-
-    public Customer(Object lock, Integer tableNumber, List<String> selectedItems) {
-        this.lock = lock;
+    public Customer(int tableNumber, List<Item> items) {
         this.tableNumber = tableNumber;
-        this.selectedItems = selectedItems;
+        this.items = items;
     }
 
-    public void placeOrder() {
-        synchronized (lock) {
-            try {
-                Thread.sleep(900);
-                System.out.println("[ Waiting for a Waiter... ]");
-                System.out.println("Customer - Place Order to table Number " + tableNumber + " " + selectedItems);
-                lock.wait();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
+    public int getTableNumber() {
+        return tableNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "tableNumber=" + tableNumber +
-                ", selectedItems=" + selectedItems +
-                '}';
+    public void setTableNumber(int tableNumber) {
+        this.tableNumber = tableNumber;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }
