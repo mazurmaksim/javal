@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,14 +15,16 @@ class EvenAndOddGenericTest {
 
     @Test
     void whenElementsIsDoubleTest() {
-        double[] result = evenAndOddGeneric.listSum(doubleList);
+        Predicate<Double> evenPredicate = num-> num %2 == 0;
+        double[] result = evenAndOddGeneric.listSum(doubleList, evenPredicate);
         assertEquals(result[0], 8.0);
         assertEquals(result[1], 8.0);
     }
 
     @Test
     void whenElementsIsIntegerTest() {
-        double[] result = evenAndOddGeneric.listSum(integerList);
+        Predicate<Integer> evenPredicate = num-> num %2 == 0;
+        double[] result = evenAndOddGeneric.listSum(integerList, evenPredicate);
         assertEquals(result[0], 16);
         assertEquals(result[1], 13);
     }
