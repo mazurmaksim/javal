@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class FileReader {
-    public static List<Path> files = FileListCollection.readFolderFiles("C:\\Users\\MaksymMazur\\OneDrive - conscensia.com\\Documents\\78");
+    public static List<Path> files = FileListCollection.readFolderFiles("<Put path to the file>");
     private static final Object lock = new Object();
 
     public int arrCount = 0;
