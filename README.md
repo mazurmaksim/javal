@@ -3,7 +3,7 @@
 Welcome to my deep Java learning repository! This repository focuses on Java core concepts and covers various categories.
 
 ## Main Direction
-The main direction of this repository is Java core.
+The main direction of this repository is Java Core learning.
 
 ## Categories
 - [Collections](https://github.com/mazurmaksim/javal/tree/master/src/collectioneasy)
