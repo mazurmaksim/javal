@@ -1,4 +1,4 @@
-package products;
+package generics.practice.products;
 
 public class Alcohol extends Product {
     public Alcohol(String name, Double price) {

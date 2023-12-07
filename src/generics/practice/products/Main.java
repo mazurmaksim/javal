@@ -1,4 +1,4 @@
-package products;
+package generics.practice.products;
 
 public class Main {
     public static void main(String[] args) {

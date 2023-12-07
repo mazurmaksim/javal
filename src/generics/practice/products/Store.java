@@ -1,4 +1,4 @@
-package products;
+package generics.practice.products;
 
 import java.util.ArrayList;
 import java.util.List;

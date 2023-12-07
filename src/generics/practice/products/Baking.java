@@ -1,4 +1,4 @@
-package products;
+package generics.practice.products;
 
 public class Baking extends Product{
     public Baking(String name, Double price) {

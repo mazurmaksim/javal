@@ -1,4 +1,4 @@
-package products;
+package generics.practice.products;
 
 public interface Basket<T> {
     void add(T t);

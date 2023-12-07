@@ -23,6 +23,10 @@ public class EvenAndOddGeneric {
         return result;
     }
 
+    // Bounded type for all Objects which extend Number
+    public <T extends Number> double add(T num1, T num2) {
+        return num1.intValue() + num2.intValue();
+    }
     public static <T extends Number> T max(T x, T y) {
         return x.doubleValue() > y.doubleValue() ? x : y;
     }
