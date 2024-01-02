@@ -6,15 +6,15 @@ Welcome to my deep Java learning repository! This repository focuses on Java cor
 The main direction of this repository is Java Core learning.
 
 ## Categories
-- [Collections](https://github.com/mazurmaksim/javal/tree/master/src/collectioneasy)
-    - Explore collections in Java: [Collections](https://github.com/mazurmaksim/javal/tree/master/src/collectioneasy)
+- [Collections](https://github.com/mazurmaksim/javal/tree/master/src/main/java/collectioneasy)
+    - Explore collections in Java: [Collections](https://github.com/mazurmaksim/javal/tree/master/src/main/java/collectioneasy)
 
-- [Generics](https://github.com/mazurmaksim/javal/tree/master/src/generics)
-    - Learn about generics in Java: [Generics](https://github.com/mazurmaksim/javal/tree/master/src/generics)
+- [Generics](https://github.com/mazurmaksim/javal/tree/master/src/main/java/generics)
+    - Learn about generics in Java: [Generics](https://github.com/mazurmaksim/javal/tree/master/src/main/java/generics)
 
-- [Lambdas](https://github.com/mazurmaksim/javal/tree/master/src/lambda)
-    - Understand Java lambdas: [Lambdas](https://github.com/mazurmaksim/javal/tree/master/src/lambda)
+- [Lambdas](https://github.com/mazurmaksim/javal/tree/master/src/main/java/lambda)
+    - Understand Java lambdas: [Lambdas](https://github.com/mazurmaksim/javal/tree/master/src/main/java/lambda)
 
-- [Threads](https://github.com/mazurmaksim/javal/tree/master/src/threads)
-    - Explore Java threads: [Threads](https://github.com/mazurmaksim/javal/tree/master/src/threads)
+- [Threads](https://github.com/mazurmaksim/javal/tree/master/src/main/java/threads)
+    - Explore Java threads: [Threads](https://github.com/mazurmaksim/javal/tree/master/src/main/java/threads)
 
