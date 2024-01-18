@@ -1,4 +1,4 @@
-package main.java.lambda.operations;
+package lambda.operations;
 
 import java.util.Optional;
 

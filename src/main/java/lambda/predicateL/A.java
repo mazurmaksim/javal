@@ -1,14 +1,17 @@
-package main.java.lambda.predicateL;
+package lambda.predicateL;
 
 import java.util.List;
 import java.util.function.Predicate;
 
 // This example demonstrate how works Predicate
 public class A {
-    private final Integer value;
+    private Integer value;
 
     public A(Integer value) {
         this.value = value;
+    }
+
+    public A() {
     }
 
     public Integer getValue() {
@@ -23,21 +26,13 @@ public class A {
     }
 }
 
-class Main {
-    private static final List<Integer> list = List.of(1,2,3,4,5,85,69,52,45);
+class FactoryA {
 
-    public static void someFunction(Predicate<A> function) {
+    public List<A> someFunction(Predicate<A> function, List<Integer> list) {
         // Map values regarding predicate and create List A objects
-        List<A> aList = list.stream()
+        return list.stream()
                 .map(A::new)
                 .filter(function)
                 .toList();
-        System.out.println(aList);
-    }
-
-    public static void main(String[] args) {
-        // Get values regarding predicate condition
-        // Should be all values <= 3
-        someFunction(a -> a.getValue() <= 3);
     }
 }
