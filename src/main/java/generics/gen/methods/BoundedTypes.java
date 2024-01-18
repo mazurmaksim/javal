@@ -1,4 +1,4 @@
-package main.java.generics.gen.methods;
+package generics.gen.methods;
 
 //construct a generic method that takes a T[] one-dimensional array as the input with a T item and it counts that
 //        how many items are greater than this specified T item.

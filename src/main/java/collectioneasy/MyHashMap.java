@@ -1,4 +1,4 @@
-package main.java.collectioneasy;
+package collectioneasy;
 
 public class MyHashMap {
 }

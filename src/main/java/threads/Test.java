@@ -1,4 +1,4 @@
-package main.java.threads;
+package threads;
 
 class Runner1 implements Runnable {
 
