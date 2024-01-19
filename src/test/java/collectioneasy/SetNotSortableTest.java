@@ -6,10 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class SetNotSortableTest {
@@ -44,5 +41,13 @@ class SetNotSortableTest {
                 .sorted(Comparator.comparing(Person::getAge))
                 .collect(Collectors.toCollection(LinkedHashSet::new));
         Assertions.assertThat(resultList).containsExactly(jack, philip, carl);
+    }
+
+    @Test
+    public void sortSetByTreeSetCustomComparator() {
+        Comparator<Person> comparator = new MyComparatorImpl();
+        SortedSet<Person> sortedPersonsByCustomComparator = new TreeSet<>(comparator);
+        sortedPersonsByCustomComparator.addAll(persons);
+        Assertions.assertThat(sortedPersonsByCustomComparator).containsExactly(jack, philip, carl);
     }
 }
