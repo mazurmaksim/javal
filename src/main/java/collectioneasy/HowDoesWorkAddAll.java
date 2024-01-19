@@ -9,13 +9,13 @@ public class HowDoesWorkAddAll {
     // At this example I want to test if same object influence when addAll
     // and another collection add duplicated objects.
     // Instead, list you should use Set
-   public List<SetNotSortable.Person> splitLists(List<SetNotSortable.Person> personList, List<SetNotSortable.Person> anotherpersonList) {
+   public List<Person> splitLists(List<Person> personList, List<Person> anotherpersonList) {
        personList.addAll(anotherpersonList);
        return personList;
    }
 
-    public Set<SetNotSortable.Person> splitSets(List<SetNotSortable.Person> personList, List<SetNotSortable.Person> anotherpersonList) {
-       Set<SetNotSortable.Person> result = new HashSet<>();
+    public Set<Person> splitSets(List<Person> personList, List<Person> anotherpersonList) {
+       Set<Person> result = new HashSet<>();
        result.addAll(personList);
        result.addAll(anotherpersonList);
         return result;

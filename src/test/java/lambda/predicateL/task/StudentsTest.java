@@ -2,6 +2,7 @@ package lambda.predicateL.task;
 
 import jdk.jfr.Description;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ class StudentsTest {
     }
 
     @Test
-    @Description("Gel all students which has grade < 92")
+    @DisplayName("Gel all students which has grade < 92")
     public void getStudentByPredicateIs92(){
         List<Student> filteredStudent =  student.getStudentsByGrade(a-> a.getPoints() == 92, students);
         org.assertj.core.api.Assertions.assertThat(filteredStudent).allSatisfy(st -> {

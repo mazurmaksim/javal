@@ -10,19 +10,19 @@ import java.util.Set;
 
 class HowDoesWorkAddAllTest {
     HowDoesWorkAddAll addOneToOther = new HowDoesWorkAddAll();
-    List<SetNotSortable.Person> list;
-    List<SetNotSortable.Person> anotherList;
+    List<Person> list;
+    List<Person> anotherList;
 
     @BeforeEach
     public void setUp() {
         list = new ArrayList<>();
         anotherList = new ArrayList<>();
-        SetNotSortable.Person philip = new SetNotSortable.Person("Philip", 50);
-        SetNotSortable.Person person2 = new SetNotSortable.Person("John", 25);
-        SetNotSortable.Person person3 = new SetNotSortable.Person("Alice", 30);
-        SetNotSortable.Person person4 = new SetNotSortable.Person("Bob", 45);
-        SetNotSortable.Person person5 = new SetNotSortable.Person("Eva", 28);
-        SetNotSortable.Person person6 = new SetNotSortable.Person("David", 35);
+        Person philip = new Person("Philip", 50);
+        Person person2 = new Person("John", 25);
+        Person person3 = new Person("Alice", 30);
+        Person person4 = new Person("Bob", 45);
+        Person person5 = new Person("Eva", 28);
+        Person person6 = new Person("David", 35);
 
         list.add(philip);
         list.add(person2);
@@ -41,13 +41,13 @@ class HowDoesWorkAddAllTest {
 
     @Test
     public void adAllHowReturn() {
-        List<SetNotSortable.Person> result = addOneToOther.splitLists(list, anotherList);
+        List<Person> result = addOneToOther.splitLists(list, anotherList);
         org.assertj.core.api.Assertions.assertThat(result).hasSize(12);
     }
 
     @Test
     public void addAllSet() {
-        Set<SetNotSortable.Person> result = addOneToOther.splitSets(list, anotherList);
+        Set<Person> result = addOneToOther.splitSets(list, anotherList);
         org.assertj.core.api.Assertions.assertThat(result).hasSize(6);
     }
 }

@@ -1,6 +1,6 @@
 package lambda.predicateL;
 
-import jdk.jfr.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,7 +11,7 @@ class MainTest {
     FactoryA factoryA = new FactoryA();
 
     @Test
-    @Description("Get values regarding predicate condition")
+    @DisplayName("Get values regarding predicate condition")
     public void createObjectByPredicate() {
         List<A> result = factoryA.someFunction(a -> a.getValue() <= 3, list);
 

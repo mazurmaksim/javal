@@ -2,27 +2,47 @@ package collectioneasy;
 
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 class SetNotSortableTest {
-    SetNotSortable setNotSortable = new SetNotSortable();
+   public SetNotSortable setNotSortable = new SetNotSortable();
+    private Set<Person> persons;
+    private Person philip;
+    private Person carl;
+    private Person jack;
+
+    @BeforeEach
+    public void setUp() {
+        persons = new HashSet<>();
+        philip = new Person("Philip", 50);
+        persons.add(philip);
+        carl = new Person("Carl", 55);
+        persons.add(carl);
+        jack = new Person("Jack", 16);
+        persons.add(jack);
+    }
 
     @Test()
     @DisplayName("Impossible sort set")
-    public void testSortedSet() {
-        Set<SetNotSortable.Person> persons = new HashSet<>();
-        SetNotSortable.Person philip = new SetNotSortable.Person("Philip", 50);
-        persons.add(philip);
-        SetNotSortable.Person carl = new SetNotSortable.Person("Carl", 55);
-        persons.add(carl);
-        SetNotSortable.Person jack = new SetNotSortable.Person("Jack", 16);
-        persons.add(jack);
-        Set<SetNotSortable.Person> result = setNotSortable.sortingSet(persons);
-        Assertions.assertThat(result).containsExactly(jack, philip, carl);
+    public void testSortedSetFailResult() {
+        Set<Person> result = setNotSortable.sortingSet(persons);
+        Assertions.assertThat(result).isNotEmpty();
+    }
+
+    @Test
+    public void shouldBeSortedSet() {
+        Set<Person> result = setNotSortable.sortingSet(persons);
+        HashSet<Person> resultList = result.stream()
+                .sorted(Comparator.comparing(Person::getAge))
+                .collect(Collectors.toCollection(LinkedHashSet::new));
+        Assertions.assertThat(resultList).containsExactly(jack, philip, carl);
     }
 }
