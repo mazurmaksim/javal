@@ -44,10 +44,18 @@ class SetNotSortableTest {
     }
 
     @Test
-    public void sortSetByTreeSetCustomComparator() {
+    public void sortSetByTreeSetCustomIntegerComparator() {
         Comparator<Person> comparator = new MyComparatorImpl();
         SortedSet<Person> sortedPersonsByCustomComparator = new TreeSet<>(comparator);
         sortedPersonsByCustomComparator.addAll(persons);
         Assertions.assertThat(sortedPersonsByCustomComparator).containsExactly(jack, philip, carl);
+    }
+
+    @Test
+    public void sortSetByTreeSetCustomStringComparator() {
+        Comparator<Person> comparator = new MyStringComparator();
+        SortedSet<Person> sortedPersonsByCustomComparator = new TreeSet<>(comparator);
+        sortedPersonsByCustomComparator.addAll(persons);
+        Assertions.assertThat(sortedPersonsByCustomComparator).containsExactly(carl, jack, philip);
     }
 }
