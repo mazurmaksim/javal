@@ -1,8 +1,5 @@
 package threads.linkedlist;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         MyLinkedList<String> list = new MyLinkedList<>();
@@ -16,8 +13,8 @@ public class Main {
         list.add("sdvcxv");
         list.add("12121212");
 
-        list.remove("Remove this");
-        list.remove("And remove this");
+        list.delete("Remove this");
+        list.delete("And remove this");
         System.out.println(list);
     }
 }
