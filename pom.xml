@@ -42,5 +42,11 @@
             <artifactId>hibernate-c3p0</artifactId>
             <version>6.4.0.Final</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
